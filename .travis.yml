@@ -1,0 +1,22 @@
+env:
+  matrix:
+    - TARGET='java-11'
+    - TARGET='java-8'
+
+
+# Build target and execute test cases
+script:
+ - mc $TARGET mvn clean compile
+ - mc $TARGET mvn clean install
+
+
+ # Install all required dependencies
+install:
+ - npm install -g mini-cross
+ - mc $TARGET echo $TARGET
+
+language: node_js
+
+services:
+ - docker
+

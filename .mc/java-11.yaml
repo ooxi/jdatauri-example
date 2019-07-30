@@ -1,0 +1,6 @@
+---
+base: ubuntu:18.04
+install:
+ - maven
+ - openjdk-11-jdk
+---
